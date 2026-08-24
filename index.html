@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Safex - 你的私人加密聊天空间</title>
+  <title>Safex - 下载</title>
   <link rel="icon" href="./app-icon-512.png" type="image/png">
   <link rel="apple-touch-icon" href="./app-icon-512.png">
 
@@ -16,183 +16,94 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Helvetica Neue", sans-serif;
-      background-color: #070d19;
-      background-image: 
-        radial-gradient(circle at 50% 15%, rgba(14, 165, 233, 0.25), transparent 60%),
-        radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.15), transparent 50%),
-        radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.12), transparent 50%);
-      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 32px 20px;
+      padding: 24px 20px;
     }
 
+    /* 无边框极简容器 */
     .card {
       width: 100%;
-      max-width: 440px;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 28px;
-      padding: 40px 32px 32px;
-      box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.7),
-        0 0 30px rgba(14, 165, 233, 0.15);
+      max-width: 320px;
+      text-align: center;
     }
 
-    /* Logo 区域 */
-    .app-icon-wrapper {
-      position: relative;
+    /* 应用图标 */
+    .app-icon {
       width: 88px;
       height: 88px;
-      margin: 0 auto 20px;
-    }
-
-    .app-icon-wrapper::after {
-      content: "";
-      position: absolute;
-      inset: -4px;
-      background: linear-gradient(135deg, #38bdf8, #6366f1);
-      border-radius: 24px;
-      filter: blur(14px);
-      opacity: 0.8;
-      z-index: 1;
-    }
-
-    .app-icon {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
       border-radius: 20px;
       object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
 
-    /* 标题与描述 */
+    /* 应用名称 */
     .app-name {
-      font-size: 28px;
-      font-weight: 800;
-      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #ffffff 30%, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
     }
 
+    /* 安全提醒标签 */
     .app-desc {
-      font-size: 14px;
-      color: #94a3b8;
-      text-align: center;
-      margin-bottom: 28px;
-      line-height: 1.5;
-    }
-
-    /* 板块通用标题 */
-    .section-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       font-size: 13px;
-      font-weight: 700;
-      color: #38bdf8;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
-
-    /* 应用参数网格 */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin-bottom: 24px;
-    }
-
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-    }
-
-    .info-label { color: #64748b; }
-    .info-val { color: #cbd5e1; font-weight: 600; }
-
-    /* 双按钮布局 */
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      color: #16a34a;
+      font-weight: 500;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 6px 14px;
+      border-radius: 20px;
       margin-bottom: 28px;
     }
 
-    .btn {
+    .app-desc svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* 下载按钮 */
+    .btn-download {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       height: 50px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      background: #2563eb;
       color: #ffffff;
-      box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.5);
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+      transition: background-color 0.2s, transform 0.1s;
     }
 
-    .btn-primary:active { transform: scale(0.98); }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #e2e8f0;
+    .btn-download:hover {
+      background: #1d4ed8;
     }
 
-    .btn-secondary:active { background: rgba(255, 255, 255, 0.1); }
-
-    .btn svg { width: 18px; height: 18px; fill: currentColor; }
-
-    /* 核心特性列表 */
-    .features {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .btn-download:active {
+      transform: scale(0.98);
     }
 
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13px;
-      color: #cbd5e1;
-    }
-
-    .feature-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: rgba(56, 189, 248, 0.1);
-      color: #38bdf8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
+    .btn-download svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
     }
   </style>
 </head>
@@ -200,70 +111,41 @@
 <body>
 
   <main class="card">
-    <!-- 图标与标题 -->
-    <div class="app-icon-wrapper">
-      <img id="appIcon" src="./app-icon-512.png" alt="Safex Logo" class="app-icon">
-    </div>
-
+    <img id="appIcon" src="./app-icon-512.png" alt="Safex" class="app-icon">
     <h1 class="app-name" id="appName">Safex</h1>
-    <p class="app-desc" id="appDesc">你的私人，安全，免费聊天空间</p>
-
-    <!-- 参数详情 -->
-    <div class="section-title">应用详情</div>
-    <div class="info-grid">
-      <div class="info-item"><span class="info-label">最新版本</span><span class="info-val" id="appVersion">v1.0.0</span></div>
-      <div class="info-item"><span class="info-label">适用系统</span><span class="info-val">Android 6.0+</span></div>
-      <div class="info-item"><span class="info-label">更新日期</span><span class="info-val">2026-08-24</span></div>
-      <div class="info-item"><span class="info-label">文件大小</span><span class="info-val">18.5 MB</span></div>
+    
+    <!-- 安全提醒标签 -->
+    <div class="app-desc" id="appDesc">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      <span>官方安全检测・无毒无广告</span>
     </div>
 
-    <!-- 下载按钮组 -->
-    <div class="btn-group">
-      <a id="downloadBtn" class="btn btn-primary" href="https://github.com/Bei18/Safex/releases/download/v1.0.0/safex.apk">
-        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-        <span>下载 Android 安装包</span>
-      </a>
-      <a class="btn btn-secondary" href="https://github.com/Bei18/Safex" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span>查看开源代码</span>
-      </a>
-    </div>
-
-    <!-- 优势卖点 -->
-    <div class="section-title">为什么选择 Safex?</div>
-    <div class="features">
-      <div class="feature-item">
-        <div class="feature-icon">🔒</div>
-        <span>端到端加密，确保隐私无虞</span>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🎁</div>
-        <span>完全免费，无广告打扰</span>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">⚡</div>
-        <span>快速稳定，随时连接世界</span>
-      </div>
-    </div>
+    <a id="downloadBtn" class="btn-download" href="https://github.com/Bei18/Safex/releases/download/v1.0.0/safex.apk">
+      </svg>
+      <span>安卓下载</span>
+    </a>
   </main>
 
   <script>
     const APP_CONFIG = {
       appName: "Safex",
-      appDesc: "你的私人，安全，免费聊天空间",
+      appDesc: "官方安全检测・无毒无广告",
       appIcon: "./app-icon-512.png",
       downloadUrl: "https://github.com/Bei18/Safex/releases/download/v1.0.0/safex.apk",
-      version: "v1.0.0",
-      pageTitle: "Safex - 官方下载"
+      pageTitle: "Safex - 下载"
     };
 
     function initPage() {
       document.title = APP_CONFIG.pageTitle;
       document.getElementById("appIcon").src = APP_CONFIG.appIcon;
       document.getElementById("appName").textContent = APP_CONFIG.appName;
-      document.getElementById("appDesc").textContent = APP_CONFIG.appDesc;
+      
+      const appDesc = document.getElementById("appDesc");
+      if (appDesc) {
+        appDesc.querySelector("span").textContent = APP_CONFIG.appDesc;
+      }
+      
       document.getElementById("downloadBtn").href = APP_CONFIG.downloadUrl;
-      document.getElementById("appVersion").textContent = APP_CONFIG.version;
     }
 
     if (document.readyState === "loading") {
@@ -272,5 +154,6 @@
       initPage();
     }
   </script>
+
 </body>
 </html>
