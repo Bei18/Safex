@@ -2,21 +2,11 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  >
-  <title>Safex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Safex - 下载</title>
 
-  <link
-    rel="icon"
-    href="./app-icon-512.png"
-    type="image/png"
-  >
-  <link
-    rel="apple-touch-icon"
-    href="./app-icon-512.png"
-  >
+  <link rel="icon" href="./app-icon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="./app-icon-512.png">
 
   <style>
     * {
@@ -26,120 +16,118 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html,
-    body {
+    html, body {
       min-height: 100%;
     }
 
     body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "PingFang SC",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
-      background:
-        radial-gradient(
-          circle at 0% 0%,
-          rgba(56, 189, 248, 0.08),
-          transparent 50%
-        ),
-        radial-gradient(
-          circle at 100% 100%,
-          rgba(99, 102, 241, 0.08),
-          transparent 50%
-        ),
-        #f8fafc;
-
-      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      background-color: #0f172a;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.05) 0px, transparent 100%);
+      color: #0f172a;
       min-height: 100vh;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
       padding: 24px 20px;
     }
 
     .card {
       width: 100%;
-      max-width: 360px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 28px;
-      padding: 36px 28px 28px;
+      max-width: 380px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 32px;
+      padding: 40px 32px 32px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 
+        0 20px 40px -15px rgba(15, 23, 42, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
     }
 
     .app-icon-wrapper {
       position: relative;
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .app-icon-wrapper::after {
       content: "";
       position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 0;
-      background: rgba(37, 99, 235, 0.15);
-      filter: blur(16px);
-      border-radius: 20px;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: -4px;
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      filter: blur(20px);
+      opacity: 0.35;
+      border-radius: 24px;
       z-index: 1;
     }
 
     .app-icon {
       position: relative;
       z-index: 2;
-      width: 84px;
-      height: 84px;
-      border-radius: 20px;
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
       object-fit: cover;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
     }
 
     .app-name {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: #0f172a;
       letter-spacing: -0.5px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .app-desc {
       font-size: 14px;
       color: #64748b;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       line-height: 1.5;
+      font-weight: 400;
     }
 
     .btn-download {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      height: 52px;
+      height: 54px;
       background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
       color: #ffffff;
       font-size: 16px;
       font-weight: 600;
-      border-radius: 16px;
+      border-radius: 18px;
       text-decoration: none;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-download:hover {
+      box-shadow: 0 14px 28px -4px rgba(37, 99, 235, 0.5);
+      transform: translateY(-1px);
     }
 
     .btn-download:active {
-      transform: scale(0.97);
-      opacity: 0.9;
+      transform: scale(0.98) translateY(0);
+      box-shadow: 0 6px 16px -4px rgba(37, 99, 235, 0.4);
     }
 
     .btn-download svg {
@@ -149,129 +137,30 @@
     }
 
     .info-section {
-      margin-top: 24px;
+      margin-top: 28px;
       padding-top: 20px;
-      border-top: 1px solid #f1f5f9;
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .info-item {
       font-size: 12px;
       color: #94a3b8;
-      line-height: 1.6;
-      margin-bottom: 6px;
-    }
-
-    .version {
-      margin-top: 16px;
-      font-size: 11px;
-      color: #cbd5e1;
-    }
-
-    .wechat-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(15, 23, 42, 0.92);
-      color: #ffffff;
-      padding: 16px 20px 32px;
-      overflow-y: auto;
-    }
-
-    .wechat-content {
-      width: 100%;
-      max-width: 390px;
-      margin: 0 auto;
-    }
-
-    .wechat-top {
-      position: relative;
-      min-height: 70px;
-      text-align: right;
-    }
-
-    .wechat-arrow {
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      margin-right: 8px;
-      animation: arrowFloat 1.3s ease-in-out infinite;
-    }
-
-    .wechat-arrow svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: #38bdf8;
-      stroke-width: 3.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    @keyframes arrowFloat {
-      0%, 100% {
-        transform: translate(0, 0);
-      }
-      50% {
-        transform: translate(3px, -6px);
-      }
-    }
-
-    .wechat-title {
-      font-size: 22px;
-      font-weight: 700;
-      margin-top: 4px;
-      margin-bottom: 8px;
-    }
-
-    .wechat-subtitle {
-      font-size: 13px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.82);
-      margin-bottom: 20px;
-    }
-
-    .wechat-card {
-      background: #ffffff;
-      color: #1e293b;
-      border-radius: 20px;
-      padding: 16px 18px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    }
-
-    .wechat-step {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-    }
-
-    .wechat-step + .wechat-step {
-      border-top: 1px solid #f1f5f9;
-    }
-
-    .wechat-number {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e0f2fe;
-      color: #0284c7;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .wechat-step-text {
-      font-size: 13px;
       line-height: 1.5;
-      color: #334155;
     }
 
-    .wechat-step-text strong {
+    .version-tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
       color: #0284c7;
+      background: rgba(186, 230, 253, 0.4);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      align-self: center;
     }
 
     @media (max-height: 650px) {
@@ -281,9 +170,6 @@
       .card {
         margin-top: 20px;
       }
-      .wechat-overlay {
-        padding-top: 10px;
-      }
     }
   </style>
 </head>
@@ -292,27 +178,13 @@
 
   <main class="card">
     <div class="app-icon-wrapper">
-      <img
-        id="appIcon"
-        src="./app-icon-512.png"
-        alt="Safex"
-        class="app-icon"
-      >
+      <img id="appIcon" src="./app-icon-512.png" alt="Safex" class="app-icon">
     </div>
 
-    <h1 class="app-name" id="appName">
-      Safex
-    </h1>
+    <h1 class="app-name" id="appName">Safex</h1>
+    <p class="app-desc" id="appDesc">免费使用的聊天软件</p>
 
-    <p class="app-desc" id="appDesc">
-      免费使用的聊天软件
-    </p>
-
-    <a
-      id="downloadBtn"
-      class="btn-download"
-      href="https://github.com/Bei18/Safex/releases/download/v1.0.0/safex.apk"
-    >
+    <a id="downloadBtn" class="btn-download" href="https://github.com/Bei18/Safex/releases/download/v1.0.0/safex.apk">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
       </svg>
@@ -322,51 +194,9 @@
     <div class="info-section">
       <p class="info-item">Android 应用安装包</p>
       <p class="info-item">下载后请按照系统提示完成安装</p>
+      <span class="version-tag" id="appVersion">v1.1.5</span>
     </div>
   </main>
-
-  <div class="wechat-overlay" id="wechatOverlay">
-    <div class="wechat-content">
-      <div class="wechat-top">
-        <div class="wechat-arrow">
-          <svg viewBox="0 0 70 70">
-            <path d="M8 60 C25 42, 40 25, 59 10" />
-            <path d="M42 10 L59 10 L59 27" />
-          </svg>
-        </div>
-      </div>
-
-      <h2 class="wechat-title">请在浏览器内打开</h2>
-
-      <p class="wechat-subtitle">
-        当前页面在微信内打开。<br>
-        请按照下方提示在系统浏览器中打开并继续。
-      </p>
-
-      <div class="wechat-card">
-        <div class="wechat-step">
-          <div class="wechat-number">1</div>
-          <div class="wechat-step-text">
-            点击页面右上角的 <strong>「•••」</strong> 菜单
-          </div>
-        </div>
-
-        <div class="wechat-step">
-          <div class="wechat-number">2</div>
-          <div class="wechat-step-text">
-            选择 <strong>「在浏览器打开」</strong>
-          </div>
-        </div>
-
-        <div class="wechat-step">
-          <div class="wechat-number">3</div>
-          <div class="wechat-step-text">
-            页面重新打开后，点击下载按钮即可
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script>
     const APP_CONFIG = {
@@ -377,10 +207,6 @@
       version: "v1.1.5",
       pageTitle: "Safex - 下载"
     };
-
-    function isWeChat() {
-      return /micromessenger/i.test(navigator.userAgent);
-    }
 
     function initPage() {
       document.title = APP_CONFIG.pageTitle;
@@ -399,13 +225,6 @@
 
       const appVersion = document.getElementById("appVersion");
       if (appVersion) appVersion.textContent = APP_CONFIG.version;
-
-      if (isWeChat()) {
-        const overlay = document.getElementById("wechatOverlay");
-        if (overlay) {
-          overlay.style.display = "block";
-        }
-      }
     }
 
     if (document.readyState === "loading") {
